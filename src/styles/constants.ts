@@ -1,1 +1,1 @@
-export const CONTAINER_MAX_WIDTH = 
+export const CONTAINER_MAX_WIDTH = 1280;

@@ -22,6 +22,7 @@ function Home() {
         <ChampionGrid>
           {champions.map((champion) => (
             <ChampionThumb
+              key={champion.id}
               src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/champion/${champion.id}.png`}
               onClick={() => alert(champion.name)}
             />

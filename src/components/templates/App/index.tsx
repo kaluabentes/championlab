@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "~/components/atoms/Container";
 
 import { THEME, useTheme } from "~/contexts/theme";
 
@@ -16,7 +17,7 @@ function App({ children }) {
   return (
     <>
       <button onClick={handleThemeSwitch}>Switch Theme</button>
-      {children}
+      <Container>{children}</Container>
     </>
   );
 }
