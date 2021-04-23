@@ -1,11 +1,13 @@
-import GlobalStyled from "~/styles/global";
+import { ThemeContextProvider } from "~/contexts/theme";
+import Theme from "./_theme";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <GlobalStyled />
-      <Component {...pageProps} />
-    </>
+    <ThemeContextProvider>
+      <Theme>
+        <Component {...pageProps} />
+      </Theme>
+    </ThemeContextProvider>
   );
 }
 

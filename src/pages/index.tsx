@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAll } from "~/api/champion";
 import ChampionThumb from "~/components/atoms/ChampionThumb";
 import ChampionGrid from "~/components/organisms/ChampionGrid";
+import App from "~/components/templates/App";
 import extractDataList from "~/utils/extractDataList";
 
 function Home() {
@@ -13,17 +14,21 @@ function Home() {
     });
   }, []);
 
-  return champions.length === 0 ? (
-    <p>Loading</p>
-  ) : (
-    <ChampionGrid>
-      {champions.map((champion) => (
-        <ChampionThumb
-          src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/champion/${champion.id}.png`}
-          onClick={() => alert(champion.name)}
-        />
-      ))}
-    </ChampionGrid>
+  return (
+    <App>
+      {champions.length === 0 ? (
+        <p>Loading</p>
+      ) : (
+        <ChampionGrid>
+          {champions.map((champion) => (
+            <ChampionThumb
+              src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/champion/${champion.id}.png`}
+              onClick={() => alert(champion.name)}
+            />
+          ))}
+        </ChampionGrid>
+      )}
+    </App>
   );
 }
 
