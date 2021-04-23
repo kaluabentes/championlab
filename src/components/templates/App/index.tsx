@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "~/components/atoms/Container";
+import Header from "~/components/organisms/Header";
 
 import { THEME, useTheme } from "~/contexts/theme";
 
@@ -16,7 +17,9 @@ function App({ children }) {
 
   return (
     <>
-      <button onClick={handleThemeSwitch}>Switch Theme</button>
+      <Header>
+        <button onClick={handleThemeSwitch}>Switch Theme</button>
+      </Header>
       <Container>{children}</Container>
     </>
   );
